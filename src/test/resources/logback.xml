@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+	<appender name="common"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/${weblogic.Name}.common.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<append>true</append>
+		<encoder>
+			<pattern>[%-5p][%d{yyyy/MM/dd HH:mm:ss}][%t] %logger - %m%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<appender name="error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--See also http://logback.qos.ch/manual/appenders.html#RollingFileAppender -->
+		<append>true</append>
+		<encoder>
+			<pattern>[%-5p][%d{yyyy/MM/dd HH:mm:ss}][%t] %logger - %m%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>error</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>logs/${weblogic.Name}.error.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+	</appender>
+	<logger name="org.apache.commons.beanutils.converters" level="WARN">
+	</logger>
+	<logger name="org.apache.commons.beanutils.ConvertUtils" level="WARN">
+	</logger>
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder"
+		level="WARN">
+	</logger>
+	<logger name="org.hibernate.loader.Loader" level="WARN">
+	</logger>
+	<logger name="org.hibernate.type" level="WARN">
+	</logger>
+	<logger name="org.hibernate.hql" level="WARN">
+	</logger>
+	<logger name="org.apache.cxf.phase.PhaseInterceptorChain" level="WARN">
+	</logger>
+	<logger name="cn.com.servyou.framework.beans.converter" level="WARN">
+	</logger>
+	<root level="debug">
+		<appender-ref ref="common" />
+		<appender-ref ref="logstash" />
+		<appender-ref ref="error" />
+	</root>
+</configuration>

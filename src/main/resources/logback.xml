@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<configuration>
+	<!-- <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.padual.com/java/logback.xsd"> -->
+	<contextName>standard-code</contextName>
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{MMdd HHmmss} [%-10t] %-5p L:%-3L %-22c{0} - %m%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>../logs/admin.log</file>
+		<encoder>
+			<pattern>%d{MMdd.HHmmss} [%-22t] %-5p L:%-3L %-22c{0} - %m%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>../logs/admin.%d{yyyyMMddHH}.log</fileNamePattern>
+		</rollingPolicy>
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>200MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+	<root level="debug">
+		<appender-ref ref="console" />
+	</root>
+	<!-- <logger name="org.springframework" level="info"> -->
+	<!-- <appender-ref ref="file" /> -->
+	<!-- <appender-ref ref="console" /> -->
+	<!-- </logger> -->
+	<logger name="com.luosoy" level="info" additivity="false">
+		<!-- <appender-ref ref="file" /> -->
+		<appender-ref ref="console" />
+	</logger>
+
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
+	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="TRACE"/>
+	<logger name="org.hibernate.SQL" level="DEBUG"/>
+	<logger name="org.hibernate.engine.QueryParameters" level="DEBUG"/>
+<!-- 	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" addivity="false" /> -->
+
+</configuration>

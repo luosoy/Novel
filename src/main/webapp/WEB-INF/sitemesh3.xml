@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<sitemesh>
+    <mapping path="*/win/*" decorator="/WEB-INF/layout/default_win.jsp" />
+	<mapping path="*" decorator="/WEB-INF/layout/default.jsp" />
+</sitemesh>

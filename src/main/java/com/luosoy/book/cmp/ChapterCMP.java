@@ -5,7 +5,6 @@
  */
 package com.luosoy.book.cmp;
 
-import com.luosoy.book.sequence.BookSequenceProducer;
 import com.luosoy.book.sequence.ChapterSequenceProducer;
 import com.luosoy.frame.jpa.identity.IdInjectionEntityListener;
 import com.luosoy.frame.jpa.identity.IdSequenceConsumer;

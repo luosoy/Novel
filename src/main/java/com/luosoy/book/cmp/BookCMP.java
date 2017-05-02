@@ -8,7 +8,6 @@ package com.luosoy.book.cmp;
 import com.luosoy.book.sequence.BookSequenceProducer;
 import com.luosoy.frame.jpa.identity.IdInjectionEntityListener;
 import com.luosoy.frame.jpa.identity.IdSequenceConsumer;
-import com.luosoy.frame.jpa.identity.UUIDProducer;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;

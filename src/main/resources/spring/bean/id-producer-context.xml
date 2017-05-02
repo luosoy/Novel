@@ -15,4 +15,8 @@
 	
 	<bean class="com.luosoy.frame.jpa.identity.UUIDProducer"/>
     
+    <bean class="com.luosoy.book.sequence.BookSequenceProducer"  />
+    <bean class="com.luosoy.book.sequence.ChapterSequenceProducer"  />
+    <bean class="com.luosoy.book.sequence.ImageSequenceProducer"  />
+    
 </beans>

@@ -14,8 +14,8 @@
         <title><sitemesh:write property='title' /> - ${title}</title>
         <meta name="keywords" content="${keywords}">
         <meta name="description" content="${description}">
-<!--        <link href="${stc}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="${stc}/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>-->
+        <!--<link href="${stc}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>-->
+        <!--<link href="${stc}/lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>-->
         <link href="${stc}/css/common.css" rel="stylesheet"/>
         <script type="text/javascript">
             var SYS = {
@@ -26,7 +26,7 @@
         </script>
         <!--[if lt IE 8]><script src="${stc}/lib/json/json3.min.js" type="text/javascript"></script><![endif]-->
         <script src="${stc}/lib/jquery/jquery.min.js" type="text/javascript"></script>
-        <!--<script src="${stc}/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>-->
+        <script src="${stc}/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="${stc}/js/common.js" type="text/javascript"></script>
     <sitemesh:write property='head'/>
 </head>
@@ -63,32 +63,32 @@
     </div>
     <div class="footer">
         <div class="link">${name}友情连接：
-            <!--            <a href="http://www.biqukan.com/16_16759/" target="_blank">主神崛起</a>
-                        <a href="http://www.biqukan.com/22_22429/" target="_blank">修真百年归来</a>
-                        <a href="http://www.biqukan.com/28_28141/" target="_blank">永恒国度</a>
-                        <a href="http://www.biqukan.com/21_21856/" target="_blank">都市超级医圣</a>
-                        <a href="http://www.biqukan.com/21_21150/" target="_blank">火影之卡皇</a>
-                        <a href="http://www.biqukan.com/16_16635/" target="_blank">限制级巨星</a>
-                        <a href="http://www.biqukan.com/21_21143/" target="_blank">天神诀</a>
-                        <a href="http://www.biqukan.com/16_16049/" target="_blank">极品美女爱上我</a>
-                        <a href="http://www.biqukan.com/0_279/" target="_blank">恶魔囚笼</a>
-                        <a href="http://www.biqukan.com/2_2113/" target="_blank">武神空间</a>
-                        <a href="http://www.biqukan.com/16_16789/" target="_blank">奋斗在红楼</a>
-                        <a href="http://www.biqukan.com/16_16673/" target="_blank">最强狂暴升级</a>
-                        <a href="http://www.biqukan.com/0_681/" target="_blank">终极教官</a>
-                        <a href="http://www.biqukan.com/1_1097/" target="_blank">逍遥小镇长</a>
-                        <a href="http://www.biqukan.com/xiaoshuodaquan/" target="_blank">小说大全</a>
-                        <a href="http://www.biqukan.com/1_1468/" target="_blank">寻情仙使</a>
-                        <a href="http://www.biqukan.com/0_426/" target="_blank">剑主苍穹</a>
-                        <a href="http://www.biqukan.com/1_1267/" target="_blank">孺子帝</a>
-                        <a href="http://www.biqukan.com/0_184/" target="_blank">灭世魔帝</a>
-                        <a href="http://www.biqukan.com/0_200/" target="_blank">史上最强师兄</a>
-                        <a href="http://www.biqukan.com/0_996/" target="_blank">侠行天下</a>
-                        <a href="http://www.biqukan.com/1_1421/" target="_blank">纨绔邪皇</a>
-                        <a href="http://www.biqukan.com/0_295/" target="_blank">我家萝莉是大明星</a>
-                        <a href="http://www.biqukan.com/0_784/" target="_blank">红色苏联</a>
-                        <a href="http://www.biqukan.com/0_178/" target="_blank">英雄联盟之七百年后</a>
-                        <a href="http://www.biqukan.com/1_1424/" target="_blank">贩妖记</a>-->
+<!--            <a href="http://www.biqukan.com/16_16759/" target="_blank">主神崛起</a>
+            <a href="http://www.biqukan.com/22_22429/" target="_blank">修真百年归来</a>
+            <a href="http://www.biqukan.com/28_28141/" target="_blank">永恒国度</a>
+            <a href="http://www.biqukan.com/21_21856/" target="_blank">都市超级医圣</a>
+            <a href="http://www.biqukan.com/21_21150/" target="_blank">火影之卡皇</a>
+            <a href="http://www.biqukan.com/16_16635/" target="_blank">限制级巨星</a>
+            <a href="http://www.biqukan.com/21_21143/" target="_blank">天神诀</a>
+            <a href="http://www.biqukan.com/16_16049/" target="_blank">极品美女爱上我</a>
+            <a href="http://www.biqukan.com/0_279/" target="_blank">恶魔囚笼</a>
+            <a href="http://www.biqukan.com/2_2113/" target="_blank">武神空间</a>
+            <a href="http://www.biqukan.com/16_16789/" target="_blank">奋斗在红楼</a>
+            <a href="http://www.biqukan.com/16_16673/" target="_blank">最强狂暴升级</a>
+            <a href="http://www.biqukan.com/0_681/" target="_blank">终极教官</a>
+            <a href="http://www.biqukan.com/1_1097/" target="_blank">逍遥小镇长</a>
+            <a href="http://www.biqukan.com/xiaoshuodaquan/" target="_blank">小说大全</a>
+            <a href="http://www.biqukan.com/1_1468/" target="_blank">寻情仙使</a>
+            <a href="http://www.biqukan.com/0_426/" target="_blank">剑主苍穹</a>
+            <a href="http://www.biqukan.com/1_1267/" target="_blank">孺子帝</a>
+            <a href="http://www.biqukan.com/0_184/" target="_blank">灭世魔帝</a>
+            <a href="http://www.biqukan.com/0_200/" target="_blank">史上最强师兄</a>
+            <a href="http://www.biqukan.com/0_996/" target="_blank">侠行天下</a>
+            <a href="http://www.biqukan.com/1_1421/" target="_blank">纨绔邪皇</a>
+            <a href="http://www.biqukan.com/0_295/" target="_blank">我家萝莉是大明星</a>
+            <a href="http://www.biqukan.com/0_784/" target="_blank">红色苏联</a>
+            <a href="http://www.biqukan.com/0_178/" target="_blank">英雄联盟之七百年后</a>
+            <a href="http://www.biqukan.com/1_1424/" target="_blank">贩妖记</a>-->
             <a href="http://www.touxiang.la/" target="_blank">偷香小说网</a> 
             <a href="http://www.3zm.net/" target="_blank">三掌门小说网</a>
             <a href="http://www.biqukan.com/" target="_blank">笔趣看</a>

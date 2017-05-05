@@ -19,6 +19,7 @@
         <property name="persistenceUnitName" value="test-db" />
         <property name="packagesToScan">
             <array>
+                <value>com.luosoy.frame.basecode.cmp</value>
                 <value>com.luosoy.book.cmp</value>
             </array>
         </property>

@@ -26,6 +26,7 @@
     </bean>
 
     <import resource="classpath*:/spring/bean/beans-context.xml" />
+    <import resource="classpath*:/spring/basecode/basecode-context.xml" />
     <import resource="classpath*:/spring/data/data-context.xml" />
     <import resource="classpath*:/spring/cache/cache-context.xml" />
     <aop:aspectj-autoproxy />

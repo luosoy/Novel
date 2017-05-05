@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import com.luosoy.frame.basecode.dto.BaseCodeDefDTO;
 import com.luosoy.frame.exception.SystemException;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 
 @Service
@@ -25,8 +26,8 @@ public class BaseCodeFromDbService {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseCodeFromDbService.class);
 
     @Autowired
-    @Qualifier(value = "BaseCodeEntityManager")
-    private EntityManager em;
+    @Qualifier(value = "basecodeEntityManagerFactory")
+    private EntityManagerFactory emf;
 
     /**
      * 取得Map形式的Code key:codeValue, value BaseCodeDTO.
@@ -84,10 +85,10 @@ public class BaseCodeFromDbService {
             StringBuilder sqlbuffer = new StringBuilder(baseSql);
             sqlbuffer.append(whereCause).append(" ")
                     .append(StringUtils.isNotEmpty(codeModel.getOrderSql()) ? codeModel.getOrderSql() : "");
-            if (em == null) {
-                throw new SystemException("no EntityManager Produces with BaseCodeEntityManager Qualifier ,please create a EntityManager", SystemException.PERSIST_EXCEPTION);
+            if (emf == null) {
+                throw new SystemException("no EntityManagerFactory Produces with basecodeEntityManagerFactory Qualifier ,please create a EntityManagerFactory", SystemException.PERSIST_EXCEPTION);
             }
-            Query query = em.createNativeQuery(sqlbuffer.toString(), BaseCodeDTO.class);
+            Query query = emf.createEntityManager().createNativeQuery(sqlbuffer.toString(), BaseCodeDTO.class);
             for (Entry<String, Object> entry : param.entrySet()) {
                 query.setParameter(entry.getKey(), entry.getValue());
             }

@@ -55,7 +55,7 @@ public class BaseCodeDefService {
      * @param codeType the code type
      * @return the code def by code type
      */
-    @Cacheable(value = "basecode-def", key = "#codeType")
+    @Cacheable(value = "basecode", key = "#codeType")
     public BaseCodeDefDTO getCodeDefByCodeType(String codeType) {
         BaseCodeDefCMP cmp = baseCodeRepository.findOne(codeType);
         return BeanConvertUtil.convert(cmp, new BaseCodeDefDTO());

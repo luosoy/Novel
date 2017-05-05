@@ -10,5 +10,8 @@
 
 	<cache name="common" maxElementsInMemory="1000"
 		timeToIdleSeconds="14400" timeToLiveSeconds="14400" eternal="false"/>
+    
+    <cache name="basecode" maxElementsInMemory="1000"
+		timeToIdleSeconds="14400" timeToLiveSeconds="14400" eternal="false"/>
 
 </ehcache>

@@ -20,11 +20,6 @@ public class EntityManagerConfig {
     @PersistenceContext(unitName = "test-db")
     private EntityManager em;
 
-    @Bean(name = "IdSequeceEntityManager")
-    public EntityManager produceEntityManager() {
-        return em;
-    }
-    
     @Bean(name = "NativeEntityManager")
     public EntityManager produceNativeEntityManager() {
         return em;

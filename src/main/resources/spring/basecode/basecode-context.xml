@@ -14,6 +14,8 @@
 	http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
 	
 	<alias name="bookEntityManagerFactory" alias="basecodeEntityManagerFactory"/>
+    
+	<alias name="bookEntityManagerFactory" alias="IdEntityManagerFactory"/>
 	
 	<alias name="bookTransactionManager" alias="basecodeTransactionManager"/>
 	

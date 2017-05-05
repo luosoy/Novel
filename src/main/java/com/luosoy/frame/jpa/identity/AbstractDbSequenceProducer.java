@@ -1,25 +1,25 @@
 package com.luosoy.frame.jpa.identity;
 
 import com.luosoy.frame.exception.SystemException;
-import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 public abstract class AbstractDbSequenceProducer implements IdProducer {
 
     @Autowired
-    @Qualifier(value = "IdSequeceEntityManager")
-    private EntityManager em;
+    @Qualifier(value = "IdEntityManagerFactory")
+    private EntityManagerFactory emf;
 
     @Override
     public Sequence produce(Context ctx) {
         try {
-            if (em != null) {
-                Object result = em.createNativeQuery(getSequenceSql()).getSingleResult();
+            if (emf != null) {
+                Object result = emf.createEntityManager().createNativeQuery(getSequenceSql()).getSingleResult();
                 Object sequence = handleSequence(result, ctx);
                 return new Sequence(sequence);
             } else {
-                throw new SystemException("no EntityManager Produces with IdSequeceEntityManager Qualifier ,please create a EntityManager", SystemException.PERSIST_EXCEPTION);
+                throw new SystemException("no EntityManagerFactory Produces with IdEntityManagerFactory Qualifier ,please create a EntityManagerFactory", SystemException.PERSIST_EXCEPTION);
             }
         } catch (RuntimeException ex) {
             throw new RuntimeException("produce sequence is wrong,the sql is " + getSequenceSql(), ex);

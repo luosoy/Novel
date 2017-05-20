@@ -30,7 +30,7 @@
 				<value>${data.datasource.BOOK.JDBC.USERNAME}</value>
 			</property>
 			<property name="password">
-				<value>${data.datasource.TEST.JDBC.PASSWORD}</value>
+				<value>${data.datasource.BOOK.JDBC.PASSWORD}</value>
 			</property>
 			<property name="maxActive">
 				<value>50</value>

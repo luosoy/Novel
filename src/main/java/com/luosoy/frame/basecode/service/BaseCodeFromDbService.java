@@ -43,6 +43,22 @@ public class BaseCodeFromDbService {
         }
         return resultMap;
     }
+    
+    /**
+     * 取得Map形式的Code key:codeValue, value BaseCodeDTO.
+     *
+     * @param codeModel the code model
+     * @return the code map
+     */
+    @Cacheable(value = "basecode", key = "#codeModel.getCodeType()+\"NameMap\"")
+    public Map<String, BaseCodeDTO> getNameMap(BaseCodeDefDTO codeModel) {
+        Map<String, BaseCodeDTO> resultMap = new HashMap<String, BaseCodeDTO>();
+        List<BaseCodeDTO> codeList = this.getCodeListParamMap(codeModel, null);
+        for (BaseCodeDTO code : codeList) {
+            resultMap.put(code.getLabel(), code);
+        }
+        return resultMap;
+    }
 
     @Cacheable(value = "basecode", key = "#codeModel.getCodeType()+#param+\"Map\"")
     public Map<String, BaseCodeDTO> getCodeMap(BaseCodeDefDTO codeModel, Map<String, Object> param) {

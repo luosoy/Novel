@@ -36,6 +36,18 @@ public interface UnifiedCodeHelper {
      * @return the name
      */
     public String getName(String codeType, String value);
+    
+    
+    /**
+     * 根据.
+     * 
+     * @param codeType
+     *            the code type
+     * @param name
+     *            the name
+     * @return the name
+     */
+    public String getValue(String codeType, String name);
 
     /**
      * 取得指定CodeType的键值对.
@@ -45,6 +57,15 @@ public interface UnifiedCodeHelper {
      * @return the code map
      */
     public Map<String, BaseCodeDTO> getCodeMap(String codeType);
+    
+    /**
+     * 取得指定CodeType的键值对.
+     * 
+     * @param codeType
+     *            the code type
+     * @return the code map
+     */
+    public Map<String, BaseCodeDTO> getNameMap(String codeType);
 
     /**
      * 根据指定的过滤条件取得缓存的数据List.

@@ -16,6 +16,7 @@ public class BookInfoDTO {
     private BookDTO bdto;
     private List<ChapterInfoDTO> cidtos;
     private ImageDTO idto;
+    private String imageUrl;
 
     public BookDTO getBdto() {
         return bdto;
@@ -41,9 +42,17 @@ public class BookInfoDTO {
         this.idto = idto;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     @Override
     public String toString() {
-        return "BookInfoDTO{" + "bdto=" + bdto + ", cidtos=" + cidtos + ", idto=" + idto + '}';
+        return "BookInfoDTO{" + "bdto=" + bdto + ", cidtos=" + cidtos + ", idto=" + idto + ", imageUrl=" + imageUrl + '}';
     }
 
 }

@@ -20,7 +20,7 @@ public class ImageService {
 
     public ImageDTO findImage(String bookxh) {
         ImageDTO idto = new ImageDTO();
-        ImageCMP icmp = ir.findByBookXhAndYxbz(bookxh, "Y");
+        ImageCMP icmp = ir.findByBookXhAndYxbz(bookxh, 'Y');
         BeanConvertUtil.convert(icmp, idto);
         return idto;
     }

@@ -11,5 +11,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 public interface ImageRepository extends JpaRepository<ImageCMP, String>, JpaSpecificationExecutor<ImageCMP> {
 
-    public ImageCMP findByBookXhAndYxbz(String bookxh, String yxbz);
+    public ImageCMP findByBookXhAndYxbz(String bookxh, Character yxbz);
 }

@@ -15,6 +15,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface ChapterRepository extends JpaRepository<ChapterCMP, String>, JpaSpecificationExecutor<ChapterCMP> {
 
-    @Query(value = "select new com.luosoy.book.dto.ChapterInfoDTO(cc.xh,cc.name,cc.updatetime) from ChapterCMP cc where cc.bookXh=:bookxh")
+    @Query(value = "select new com.luosoy.book.dto.ChapterInfoDTO(cc.xh,cc.name,cc.updatetime) from ChapterCMP cc where cc.bookXh=:bookxh and cc.yxbz = 'Y'")
     public List<ChapterInfoDTO> findChapterInfo(@Param(value = "bookxh") String bookxh);
 }

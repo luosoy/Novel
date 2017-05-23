@@ -1,5 +1,6 @@
 package com.luosoy.book.controller;
 
+import com.luosoy.book.dto.BookInfoDTO;
 import com.luosoy.book.facade.BookFacade;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +36,17 @@ public class BookController {
         return "book/search";
     }
 
-    @RequestMapping(value = "/book/{bookid}", method = RequestMethod.GET)
-    public String book(@PathVariable String bookid, HttpServletRequest request) {
+    @RequestMapping(value = "/book/{bookxh}", method = RequestMethod.GET)
+    public String book(@PathVariable String bookxh, HttpServletRequest request) {
+        BookInfoDTO bidto = bf.findBookInfo(bookxh);
         
         return "book/book";
     }
 
-    @RequestMapping(value = "/book/{bookid}/{chapterid}", method = RequestMethod.GET)
-    public String chapter(@PathVariable String bookid, @PathVariable String chapterid, HttpServletRequest request) {
-        System.out.println(bookid);
-        System.out.println(chapterid);
+    @RequestMapping(value = "/book/{bookxh}/{chapterxh}", method = RequestMethod.GET)
+    public String chapter(@PathVariable String bookxh, @PathVariable String chapterxh, HttpServletRequest request) {
+        System.out.println(bookxh);
+        System.out.println(chapterxh);
         return "book/chapter";
     }
 

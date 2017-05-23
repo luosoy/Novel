@@ -5,7 +5,6 @@
  */
 package com.luosoy.book.facade;
 
-import com.luosoy.book.dto.BookDTO;
 import com.luosoy.book.dto.BookInfoDTO;
 import com.luosoy.book.service.BookService;
 import com.luosoy.book.service.ChapterService;
@@ -27,11 +26,11 @@ public class BookFacade {
     @Autowired
     private ImageService is;
 
-    private BookInfoDTO findBookInfo(String bookxh) {
+    public BookInfoDTO findBookInfo(String bookxh) {
         BookInfoDTO bidto = new BookInfoDTO();
-        BookDTO bdto = bs.findBook(bookxh);
-        bidto.setBdto(bdto);
-        
+        bidto.setBdto(bs.findBook(bookxh));
+        bidto.setCidtos(cs.findChapterInfo(bookxh));
+        bidto.setIdto(is.findImage(bookxh));
         return bidto;
     }
 

@@ -13,7 +13,6 @@ public class BookDTO {
     private String name;
     private String introduction;
     private String author;
-    private String imageXh;
     private String booktypeDm;
     private Date updatetime;
     private String lastchapterXh;
@@ -53,14 +52,6 @@ public class BookDTO {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getImageXh() {
-        return imageXh;
-    }
-
-    public void setImageXh(String imageXh) {
-        this.imageXh = imageXh;
     }
 
     public String getBooktypeDm() {
@@ -129,7 +120,7 @@ public class BookDTO {
 
     @Override
     public String toString() {
-        return "BookDTO{" + "xh=" + xh + ", name=" + name + ", introduction=" + introduction + ", author=" + author + ", imageXh=" + imageXh + ", booktypeDm=" + booktypeDm + ", updatetime=" + updatetime + ", lastchapterXh=" + lastchapterXh + ", statusDm=" + statusDm + ", number=" + number + ", clickcount=" + clickcount + ", searchcount=" + searchcount + ", yxbz=" + yxbz + '}';
+        return "BookDTO{" + "xh=" + xh + ", name=" + name + ", introduction=" + introduction + ", author=" + author + ", booktypeDm=" + booktypeDm + ", updatetime=" + updatetime + ", lastchapterXh=" + lastchapterXh + ", statusDm=" + statusDm + ", number=" + number + ", clickcount=" + clickcount + ", searchcount=" + searchcount + ", yxbz=" + yxbz + '}';
     }
 
 }

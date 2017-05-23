@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.luosoy.book.cmp;
 
 import com.luosoy.book.sequence.ImageSequenceProducer;
@@ -34,6 +33,9 @@ public class ImageCMP implements Serializable {
     @Column(nullable = false, length = 32)
     private String xh;
     @Basic(optional = false)
+    @Column(name = "book_xh", nullable = false, length = 32)
+    private String bookXh;
+    @Basic(optional = false)
     @Column(nullable = false, length = 10)
     private String type;
     @Column(length = 100)
@@ -49,8 +51,9 @@ public class ImageCMP implements Serializable {
         this.xh = xh;
     }
 
-    public ImageCMP(String xh, String type, Character yxbz) {
+    public ImageCMP(String xh, String bookXh, String type, Character yxbz) {
         this.xh = xh;
+        this.bookXh = bookXh;
         this.type = type;
         this.yxbz = yxbz;
     }
@@ -61,6 +64,14 @@ public class ImageCMP implements Serializable {
 
     public void setXh(String xh) {
         this.xh = xh;
+    }
+
+    public String getBookXh() {
+        return bookXh;
+    }
+
+    public void setBookXh(String bookXh) {
+        this.bookXh = bookXh;
     }
 
     public String getType() {

@@ -46,8 +46,6 @@ public class BookCMP implements Serializable {
     @Basic(optional = false)
     @Column(nullable = false, length = 100)
     private String author;
-    @Column(name = "image_xh", length = 32)
-    private String imageXh;
     @Basic(optional = false)
     @Column(name = "booktype_dm", nullable = false, length = 32)
     private String booktypeDm;
@@ -112,14 +110,6 @@ public class BookCMP implements Serializable {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public String getImageXh() {
-        return imageXh;
-    }
-
-    public void setImageXh(String imageXh) {
-        this.imageXh = imageXh;
     }
 
     public String getBooktypeDm() {

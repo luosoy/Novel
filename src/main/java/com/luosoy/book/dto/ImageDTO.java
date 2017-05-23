@@ -8,6 +8,7 @@ package com.luosoy.book.dto;
 public class ImageDTO {
 
     private String xh;
+    private String bookXh;
     private String type;
     private String path;
     private Character yxbz;
@@ -18,6 +19,14 @@ public class ImageDTO {
 
     public void setXh(String xh) {
         this.xh = xh;
+    }
+
+    public String getBookXh() {
+        return bookXh;
+    }
+
+    public void setBookXh(String bookXh) {
+        this.bookXh = bookXh;
     }
 
     public String getType() {
@@ -46,7 +55,7 @@ public class ImageDTO {
 
     @Override
     public String toString() {
-        return "ImageDTO{" + "xh=" + xh + ", type=" + type + ", path=" + path + ", yxbz=" + yxbz + '}';
+        return "ImageDTO{" + "xh=" + xh + ", bookXh=" + bookXh + ", type=" + type + ", path=" + path + ", yxbz=" + yxbz + '}';
     }
 
 }

@@ -5,9 +5,9 @@
  */
 package com.luosoy.book.service;
 
-import com.luosoy.frame.utils.CipherUtil;
-import com.luosoy.frame.exception.BusinessException;
-import java.util.Date;
+import com.luosoy.book.dto.BookDTO;
+import com.luosoy.book.repository.BookRepository;
+import com.luosoy.frame.beans.BeanConvertUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +17,14 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class BookService {
+
+    @Autowired
+    private BookRepository br;
+
+    public BookDTO findBook(String bookxh) {
+        BookDTO bookDTO = new BookDTO();
+        BeanConvertUtil.convert(br.findOne(bookxh), bookDTO);
+        return bookDTO;
+    }
 
 }

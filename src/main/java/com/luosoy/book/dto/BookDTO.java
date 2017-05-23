@@ -3,84 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.luosoy.book.cmp;
+package com.luosoy.book.dto;
 
-import com.luosoy.book.sequence.BookSequenceProducer;
-import com.luosoy.frame.jpa.identity.IdInjectionEntityListener;
-import com.luosoy.frame.jpa.identity.IdSequenceConsumer;
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-/**
- * @author 罗真朋
- * @version 1.0
- */
-@Entity
-@Table(name = "book")
-@EntityListeners(value = {IdInjectionEntityListener.class})
-public class BookCMP implements Serializable {
+public class BookDTO {
 
-    private static final long serialVersionUID = -674866436569127688L;
-
-    @Id
-    @Basic(optional = false)
-    @IdSequenceConsumer(producerClass = BookSequenceProducer.class)
-    @Column(nullable = false, length = 32)
     private String xh;
-    @Basic(optional = false)
-    @Column(nullable = false, length = 100)
     private String name;
-    @Basic(optional = false)
-    @Lob
-    @Column(nullable = false, length = 65535)
     private String introduction;
-    @Basic(optional = false)
-    @Column(nullable = false, length = 100)
     private String author;
-    @Column(name = "image_xh", length = 32)
     private String imageXh;
-    @Basic(optional = false)
-    @Column(name = "booktype_dm", nullable = false, length = 32)
     private String booktypeDm;
-    @Temporal(TemporalType.TIMESTAMP)
     private Date updatetime;
-    @Column(name = "lastchapter_xh", length = 32)
     private String lastchapterXh;
-    @Basic(optional = false)
-    @Column(name = "status_dm", nullable = false, length = 2)
     private String statusDm;
     private Integer number;
     private Integer clickcount;
     private Integer searchcount;
-    @Basic(optional = false)
-    @Column(nullable = false)
     private Character yxbz;
-
-    public BookCMP() {
-    }
-
-    public BookCMP(String xh) {
-        this.xh = xh;
-    }
-
-    public BookCMP(String xh, String name, String introduction, String author, String booktypeDm, String statusDm, Character yxbz) {
-        this.xh = xh;
-        this.name = name;
-        this.introduction = introduction;
-        this.author = author;
-        this.booktypeDm = booktypeDm;
-        this.statusDm = statusDm;
-        this.yxbz = yxbz;
-    }
 
     public String getXh() {
         return xh;
@@ -187,28 +128,8 @@ public class BookCMP implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (xh != null ? xh.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof BookCMP)) {
-            return false;
-        }
-        BookCMP other = (BookCMP) object;
-        if ((this.xh == null && other.xh != null) || (this.xh != null && !this.xh.equals(other.xh))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
-        return "com.luosoy.book.cmp.BookCMP[ xh=" + xh + " ]";
+        return "BookDTO{" + "xh=" + xh + ", name=" + name + ", introduction=" + introduction + ", author=" + author + ", imageXh=" + imageXh + ", booktypeDm=" + booktypeDm + ", updatetime=" + updatetime + ", lastchapterXh=" + lastchapterXh + ", statusDm=" + statusDm + ", number=" + number + ", clickcount=" + clickcount + ", searchcount=" + searchcount + ", yxbz=" + yxbz + '}';
     }
 
 }

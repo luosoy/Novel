@@ -21,11 +21,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- * <pre>类名: ChapterCMP</pre>
- * <pre>描述: TODO</pre>
- * <pre>版权: 税友软件集团股份有限公司</pre>
- * <pre>日期: 2017-05-02 下午05:39:20 </pre>
- *
  * @author 罗真朋
  * @version 1.0
  */

@@ -5,8 +5,13 @@
  */
 package com.luosoy.test;
 
+import com.luosoy.book.dto.ChapterInfoDTO;
+import com.luosoy.book.service.ChapterService;
+import java.util.List;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.kubek2k.springockito.annotations.SpringockitoContextLoader;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,5 +28,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(loader = SpringockitoContextLoader.class, locations = {"classpath*:/spring/test-context.xml"})
 public class SpringTest {
 
-    
+    @Autowired
+    private ChapterService cs;
+
+    @Test
+    public void test() {
+        List<ChapterInfoDTO> findChapterInfo = cs.findChapterInfo("11111");
+        System.out.println(findChapterInfo);
+    }
 }

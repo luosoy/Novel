@@ -14,6 +14,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 /**
@@ -35,6 +36,8 @@ public class ImageCMP implements Serializable {
     @Basic(optional = false)
     @Column(name = "book_xh", nullable = false, length = 32)
     private String bookXh;
+    @Lob
+    private byte[] photo;
     @Basic(optional = false)
     @Column(nullable = false, length = 10)
     private String type;
@@ -72,6 +75,14 @@ public class ImageCMP implements Serializable {
 
     public void setBookXh(String bookXh) {
         this.bookXh = bookXh;
+    }
+
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
     }
 
     public String getType() {

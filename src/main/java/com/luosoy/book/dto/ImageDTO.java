@@ -9,6 +9,7 @@ public class ImageDTO {
 
     private String xh;
     private String bookXh;
+    private byte[] photo;
     private String type;
     private String path;
     private Character yxbz;
@@ -33,6 +34,14 @@ public class ImageDTO {
         return type;
     }
 
+    public byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(byte[] photo) {
+        this.photo = photo;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -55,7 +64,7 @@ public class ImageDTO {
 
     @Override
     public String toString() {
-        return "ImageDTO{" + "xh=" + xh + ", bookXh=" + bookXh + ", type=" + type + ", path=" + path + ", yxbz=" + yxbz + '}';
+        return "ImageDTO{" + "xh=" + xh + ", bookXh=" + bookXh + ", photo=" + photo + ", type=" + type + ", path=" + path + ", yxbz=" + yxbz + '}';
     }
 
 }

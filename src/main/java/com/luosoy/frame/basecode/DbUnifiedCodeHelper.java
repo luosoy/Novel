@@ -54,6 +54,20 @@ public class DbUnifiedCodeHelper implements UnifiedCodeHelper {
     }
 
     @Override
+    public String getValue(String codeType, String name) {
+        String result = null;
+        try {
+            Map<String, BaseCodeDTO> codeMap = getNameMap(codeType);
+            BaseCodeDTO resultDto = codeMap.get(name);
+            result = resultDto != null ? resultDto.getValue() : "";
+        } catch (Exception ex) {
+            LOGGER.info(ex.getMessage(), ex);
+            throw new RuntimeException(ex);// NOSONAR
+        }
+        return result;
+    }
+
+    @Override
     public void converCodeToJsonAndWrite(String codeType, OutputStream stream) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
@@ -73,6 +87,19 @@ public class DbUnifiedCodeHelper implements UnifiedCodeHelper {
         try {
             BaseCodeDefDTO defDto = codeDefService.getCodeDefByCodeType(codeType);
             result = codeService.getCodeMap(defDto);
+        } catch (Exception ex) {
+            LOGGER.info(ex.getMessage(), ex);
+            throw new RuntimeException(ex);// NOSONAR
+        }
+        return result;
+    }
+
+    @Override
+    public Map<String, BaseCodeDTO> getNameMap(String codeType) {
+        Map<String, BaseCodeDTO> result = null;
+        try {
+            BaseCodeDefDTO defDto = codeDefService.getCodeDefByCodeType(codeType);
+            result = codeService.getNameMap(defDto);
         } catch (Exception ex) {
             LOGGER.info(ex.getMessage(), ex);
             throw new RuntimeException(ex);// NOSONAR

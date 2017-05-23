@@ -47,15 +47,15 @@
     <div class="nav">
         <ul>
             <li><a href="${ctx}/novel/index">首页</a></li>
-            <li><a href="${ctx}/novel/xhxs/index">玄幻小说</a></li>
-            <li><a href="${ctx}/novel/xzxs/index">修真小说</a></li>
-            <li><a href="${ctx}/novel/dsxs/index">都市小说</a></li>
-            <li><a href="${ctx}/novel/cyxs/index">穿越小说</a></li>
-            <li><a href="${ctx}/novel/wyxs/index">网游小说</a></li>
-            <li><a href="${ctx}/novel/khxs/index">科幻小说</a></li>
-            <li><a href="${ctx}/novel/qtxs/index">其他小说</a></li>
-            <li><a href="${ctx}/novel/phbd/index">排行榜单</a></li>
-            <li><a href="${ctx}/novel/wb/index">完本小说</a></li>
+            <li><a href="${ctx}/novel/xhxs">玄幻小说</a></li>
+            <li><a href="${ctx}/novel/xzxs">修真小说</a></li>
+            <li><a href="${ctx}/novel/dsxs">都市小说</a></li>
+            <li><a href="${ctx}/novel/cyxs">穿越小说</a></li>
+            <li><a href="${ctx}/novel/wyxs">网游小说</a></li>
+            <li><a href="${ctx}/novel/khxs">科幻小说</a></li>
+            <li><a href="${ctx}/novel/qtxs">其他小说</a></li>
+            <li><a href="${ctx}/novel/phbd">排行榜单</a></li>
+            <li><a href="${ctx}/novel/wb">完本小说</a></li>
         </ul>
     </div>
     <div class="wrap">

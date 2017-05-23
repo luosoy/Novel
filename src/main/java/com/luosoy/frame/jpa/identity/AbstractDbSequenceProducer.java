@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public abstract class AbstractDbSequenceProducer implements IdProducer {
 
-    @Autowired
+    @Autowired(required = false)
     @Qualifier(value = "IdEntityManagerFactory")
     private EntityManagerFactory emf;
 

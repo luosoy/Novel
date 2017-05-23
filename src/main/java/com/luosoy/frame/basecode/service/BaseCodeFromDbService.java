@@ -24,7 +24,7 @@ public class BaseCodeFromDbService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseCodeFromDbService.class);
 
-    @Autowired
+    @Autowired(required = false)
     @Qualifier(value = "basecodeEntityManagerFactory")
     private EntityManagerFactory emf;
 

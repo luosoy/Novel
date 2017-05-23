@@ -55,6 +55,7 @@ public class CommonParamInterceptor implements HandlerInterceptor {
         request.setAttribute("copyright", copyright);
         request.setAttribute("search", "");
         request.setAttribute("ctx", request.getContextPath());
+        request.setAttribute("book", request.getContextPath()+"/novel/book");
         request.setAttribute("stc", request.getContextPath() + "/assets");
         return true;
     }

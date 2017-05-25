@@ -10,7 +10,6 @@ import com.luosoy.book.dto.BookInfoDTO;
 import com.luosoy.book.service.BookService;
 import com.luosoy.book.service.ChapterService;
 import com.luosoy.book.service.ImageService;
-import com.luosoy.frame.utils.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,7 +34,7 @@ public class BookFacade {
             bidto.setBdto(bdto);
             bidto.setCidtos(cs.findChapterInfo(bookxh));
             bidto.setIdto(is.findImage(bookxh));
-            ImageUtil.read2Image(bidto.getIdto().getPhoto(), bookxh);
+            //ImageUtil.read2Image(bidto.getIdto().getPhoto(), bookxh);
         }
         return bidto;
     }
